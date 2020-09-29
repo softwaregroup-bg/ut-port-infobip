@@ -20,7 +20,7 @@ Sending SMS with infobip system
 
 and then call it with
 
-```nodejs
+```js
 await importMethod('infobip.send')({
     from: '',
     to: '',
