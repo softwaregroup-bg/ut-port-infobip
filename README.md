@@ -4,7 +4,7 @@ Sending SMS with infobip system
 
 ## In order to use the module you need to add the following configuration
 
-```
+```json
 "infobip": {
         "logLevel": "error",
         "url": "https://yg66g.api.infobip.com",
@@ -20,7 +20,7 @@ Sending SMS with infobip system
 
 and then call it with
 
-```
+```nodejs
 await importMethod('infobip.send')({
     from: '',
     to: '',
