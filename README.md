@@ -1,6 +1,6 @@
 # ut-port-infobip
 
-Sending SMS with infobip system
+Sending SMS with infobip system.
 
 ## In order to use the module you need to add the following configuration
 
