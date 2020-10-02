@@ -1,26 +1,33 @@
 module.exports = (...params) => class infobip extends require('ut-port-http')(...params) {
     get defaults() {
         return {
-            namespace: [
-                'infobip'
-            ],
-            id: 'send'
+            namespace: 'infobip',
+            drainSend: 50000
         };
     }
 
     handlers() {
         return {
-            send: async(msg, $meta) => {
+            'drainSend.event.receive'(msg, $meta) {
+                $meta.mtid = 'notification';
+                $meta.method = 'notice.message.process';
+                return {
+                    port: this.config.id,
+                    method: this.config.namespace + '.exec',
+                    length: msg.length
+                };
+            },
+            [`${this.config.namespace}.exec.request.send`]: (msg, $meta) => {
                 return {
                     payload: {
                         from: msg.from,
                         to: msg.to,
-                        text: msg.text
+                        text: msg.body
                     },
                     json: true
                 };
             },
-            receive: async(msg, $meta) => {
+            receive: (msg, $meta) => {
                 return msg.payload;
             }
         };
