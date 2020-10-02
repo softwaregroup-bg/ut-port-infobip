@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/softwaregroup-bg/ut-port-infobip/compare/v1.4.0...v1.4.1) (2020-10-02)
+
+
+### Bug Fixes
+
+* sending of sms with infobip ([60b9b5d](https://github.com/softwaregroup-bg/ut-port-infobip/commit/60b9b5d9e59b08bfa32a41b3783b162387a1782d))
+
+
+
 # 1.4.0 (2020-09-29)
 
 
